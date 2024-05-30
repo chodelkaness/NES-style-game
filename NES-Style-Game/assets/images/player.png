@@ -1,0 +1,5 @@
+from PIL import Image
+
+# Create an image with a red square
+player_image = Image.new('RGBA', (32, 32), (255, 0, 0, 255))
+player_image.save('assets/images/player.png')

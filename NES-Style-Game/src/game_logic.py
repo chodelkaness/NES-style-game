@@ -1,11 +1,13 @@
 import pygame
 from player import Player
 from level import Level
+from background import Background
 from ui import UI
 
 class Game:
     def __init__(self, screen):
         self.screen = screen
+        self.background = Background()
         self.player = Player()
         self.level = Level(screen)
         self.ui = UI(screen)
@@ -23,6 +25,7 @@ class Game:
 
     def draw(self):
         self.screen.fill((0, 0, 0))
+        self.background.draw(self.screen)
         self.player.draw(self.screen)
         self.level.draw()
         self.ui.draw()

@@ -1,10 +1,10 @@
 import pygame
+import os
 
 class Player(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
-        self.image = pygame.Surface((32, 32))
-        self.image.fill((255, 0, 0))
+        self.image = pygame.image.load(os.path.join('assets/images', 'player.png')).convert_alpha()
         self.rect = self.image.get_rect()
         self.rect.center = (400, 300)
         self.speed = 5
